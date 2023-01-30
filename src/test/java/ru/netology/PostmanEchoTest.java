@@ -1,18 +1,18 @@
-package ru.netology.rest;
+package ru.netology;
 
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.equalTo;
 
-class PostmanEchoTest {
+public class PostmanEchoTest {
 
     @Test
-    void shouldReturnSendData() {
+     void shouldReturnSendData() {
         given()
                 .baseUri("https://postman-echo.com")
-                .body("Data") // отправляемые данные (заголовки и query можно выставлять аналогично)
+                .body("Data 45") // отправляемые данные (заголовки и query можно выставлять аналогично)
 // Выполняемые действия
                 .when()
                 .post("/post")
